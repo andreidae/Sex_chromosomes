@@ -1,0 +1,7 @@
+### /groups/hologenomics/software/xsbatch -c 10 --mem-per-cpu 10G --time 100:00:00 -- sh /groups/hologenomics/westbury/Scripts/Old/Satsumasynteny.sh 10 ../Bowhead_sex_scaffolds.fasta ../../Cow_X_Hom
+o_Y.fasta Bowhead
+
+
+/groups/hologenomics/westbury/Software/satsuma/SatsumaSynteny -m 1 -n 10 -q /groups/hologenomics/andreaac/data/geneflow/Reference_fullgenome//GCF_005190385.1_NGI_Narwhal_1_genomic.fna -t /groups/hologenomics/westbury/data/References/Cow_X_Homo_Y.fasta -o Narwhal
+
+Remaining_script.sh (END)
