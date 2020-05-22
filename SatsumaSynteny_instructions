@@ -6,3 +6,4 @@
 /groups/hologenomics/andreaac/Software/satsuma/SatsumaSynteny -m 1 -n 10 -q /groups/hologenomics/andreaac/data/References/Nucleargenomes/UrsMar_1.0_HiC.fasta -t /groups/hologenomics/andreaac/data/References/XY_chr/Dog_X_Homo_Y.fasta -o /groups/hologenomics/andreaac/data/References/XY_chr/XY_chr_UrsMar_1.0_HiC
 
 
+
