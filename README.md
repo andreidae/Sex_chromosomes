@@ -10,7 +10,7 @@ Satsuma
 ## 2. Read manual
 http://satsuma.sourceforge.net/manual.html
 
-3. Run SatsumaSynteny.sh. Some information to help you setting up your run:
+## 3. Run SatsumaSynteny.sh. Some information to help you setting up your run:
 
 ##################################################################
 
@@ -80,7 +80,7 @@ SatsumaSynteny.sh script only uses
 
 
 
-4. To analyze and visualize final results
+## 4. To analyze and visualize final results
 File output_directory/satsuma_summary.chained.out contains the final coordinates:
 
 <outdir>/satsuma_summary.out: all alignment coordinates (Satsuma only)
@@ -114,7 +114,7 @@ chrX 6270 6452 chrX 9472 9654 0.576923 +
 
 
 
-5. Visualization
+## 5. Visualization
 
 Use ./MicroSyntenyPlot –i <satsuma_summary.txt> to create a postscript dot plot (color coded by target chromosomes).
 
