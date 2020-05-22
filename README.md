@@ -1,13 +1,13 @@
 # Sex_chromosomes
 
 
-1. Use Satsuma to align sex chromosomes to the reference genome
+## 1. Use Satsuma to align sex chromosomes to the reference genome
 Satsuma is a tool that reliably aligns large and complex DNA sequences providing maximum sensitivity (to find all there is to find), specificity (to only find real homology) and speed (to accommodate the billions of base pairs of vertebrate genomes). Satsuma addresses these three issues through novel strategies: (i) cross-correlation, implemented via fast Fourier transform; (ii) a match scoring scheme that eliminates almost all false hits; and (iii) an asynchronous ‘battleship’-like search that allows for aligning two entire fish genomes (470 and 217 Mb) in 120 CPU hours using 15 processors on a single machine. Satsuma is part of the Spines software package, implemented in C++ on Linux. The latest version of Spines can be freely downloaded under the LGPL license here.
 
 Grabherr, MG et al. (2011) Genome-wide synteny through highly sensitive sequence alignment: Satsuma. Bioinformatics. 2010 May 1;26(9):1145-51.
 Satsuma 
 
-2. Read manual
+## 2. Read manual
 http://satsuma.sourceforge.net/manual.html
 
 3. Run SatsumaSynteny.sh. Some information to help you setting up your run:
