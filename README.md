@@ -13,8 +13,11 @@ http://satsuma.sourceforge.net/manual.html
 3. Run SatsumaSynteny.sh. Some information to help you setting up your run:
 
 ##################################################################
+
  -q : query fasta sequence
+ 
  -t : target fasta sequence
+ 
  -o : output directory
  -l : minimum alignment length (def=0)
  -t_chunk : target chunk size (def=4096)
