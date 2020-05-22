@@ -42,10 +42,10 @@ Download the manual from: http://www.broadinstitute.org/science/programs/genome-
 
 SatsumaSynteny.sh script only uses 
 
-1 - Threads or number of CPUs
-2 - Query sequence (genome of interest)
-3 - Target sequence (Chromosomes)
-4 - Output_directory
+-- 1 - Threads or number of CPUs
+-- 2 - Query sequence (genome of interest)
+-- 3 - Target sequence (Chromosomes)
+-- 4 - Output_directory
 
 -m 1 -n $1 -q $2 -t $3 -o $4
 
@@ -53,13 +53,13 @@ SatsumaSynteny.sh script only uses
 
 4. To analyze and visualize final results
 File output_directory/satsuma_summary.chained.out contains the final coordinates:
- 1. Target sequence name (provided by fasta)
- 2. First target base
- 3. Last target base
- 4. Query sequence name (provided by fasta)
- 5. First query base
- 6. Last query base
- 7. Identity orientation
+ a. Target sequence name (provided by fasta)
+ b. First target base
+ c. Last target base
+ d. Query sequence name (provided by fasta)
+ e. First query base
+ f. Last query base
+ g. Identity orientation
 Here is an example:
 
 EXAMPLE:
