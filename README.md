@@ -107,6 +107,7 @@ Contents:
 
 
 EXAMPLE:
+
 chrX 5947 6164 chrX 9153 9360 0.626728 +
 
 chrX 6270 6452 chrX 9472 9654 0.576923 +
@@ -114,6 +115,7 @@ chrX 6270 6452 chrX 9472 9654 0.576923 +
 
 
 5. Visualization
+
 Use ./MicroSyntenyPlot –i <satsuma_summary.txt> to create a postscript dot plot (color coded by target chromosomes).
 
 Use ./ChromosomePaint to create a postscript file that colors chromosomes by color.
