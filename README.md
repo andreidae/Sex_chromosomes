@@ -8,7 +8,7 @@ Grabherr, MG et al. (2011) Genome-wide synteny through highly sensitive sequence
 Satsuma 
 
 2. Read manual
-Download the manual from: http://www.broadinstitute.org/science/programs/genome-biology/spines and get familiar with Satsuma.
+http://satsuma.sourceforge.net/manual.html
 
 3. Run SatsumaSynteny.sh. Some information to help you setting up your run:
 
@@ -53,14 +53,36 @@ SatsumaSynteny.sh script only uses
 
 4. To analyze and visualize final results
 File output_directory/satsuma_summary.chained.out contains the final coordinates:
- a. Target sequence name (provided by fasta)
- b. First target base
- c. Last target base
- d. Query sequence name (provided by fasta)
- e. First query base
- f. Last query base
- g. Identity orientation
-Here is an example:
+
+
+<outdir>/satsuma_summary.out: all alignment coordinates (Satsuma only)
+
+<outdir>/satsuma_summary.refined.out: final coordinates (Satsuma and SatsumaSynteny)
+
+
+Contents:
+
+Target sequence name (provided by fasta)
+First target base
+Last target base
+Query sequence name (provided by fasta)
+First query base
+Last query base
+Identity
+Orientation
+
 
 EXAMPLE:
-chrX 5947	6164	chrX 9153 chrX 6270	6452	chrX 9472 9360	0.626728	+ 9654	0.576923	+
+chrX 5947 6164 chrX 9153 9360 0.626728 +
+
+chrX 6270 6452 chrX 9472 9654 0.576923 +
+
+
+
+5. Visualization
+Use ./MicroSyntenyPlot –i <satsuma_summary.txt> to create a postscript dot plot (color coded by target chromosomes).
+
+Use ./ChromosomePaint to create a postscript file that colors chromosomes by color.
+
+Use ./BlockDisplaySatsuma to create a file that can be shown in the interactive multi-level synteny browser MizBee.
+
