@@ -1,8 +1,12 @@
 
+## 20200522
 ### Using xsbatch and the script Satsumasynteny.sh
-/groups/hologenomics/software/xsbatch -c 10 --mem-per-cpu 10G --time 100:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/References/Nucleargenomes/UrsMar_1.0_HiC.fasta /groups/hologenomics/andreaac/data/References/XY_chr/Dog_X_Homo_Y.fasta /groups/hologenomics/andreaac/data/References/XY_chr/XY_chr_UrsMar_1.0_HiC
+/groups/hologenomics/software/xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/References/Nucleargenomes/UrsMar_1.0_HiC.fasta /groups/hologenomics/andreaac/data/References/XY_chr/Dog_X_Homo_Y.fasta /groups/hologenomics/andreaac/data/References/XY_chr/XY_chr_UrsMar_1.0_HiC
+
+
 
 ### Calling the software directly without the script Satsumasynteny.sh
+## It gave me an error 
 /groups/hologenomics/andreaac/Software/satsuma/SatsumaSynteny -m 1 -n 10 -q /groups/hologenomics/andreaac/data/References/Nucleargenomes/UrsMar_1.0_HiC.fasta -t /groups/hologenomics/andreaac/data/References/XY_chr/Dog_X_Homo_Y.fasta -o /groups/hologenomics/andreaac/data/References/XY_chr/XY_chr_UrsMar_1.0_HiC
 
 
