@@ -31,3 +31,51 @@ head -40000 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polar
 head -40000 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942196_1.fastq.gz > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_10K/SRR942196_10K_1.fastq.gz
 head -40000 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942198_1.fastq.gz > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_10K/SRR942198_10K_1.fastq.gz
 head -40000 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942199_1.fastq.gz > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_10K/SRR942199_10K_1.fastq.gz
+
+
+Using seqtk
+
+seqtk sample -s123 read1.fq 10000 > sub1.fq
+
+############ Add this in a file Subsampling.sh
+
+module load seqtk/v1.3
+
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942239_1.fastq.gz 1000000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_1M/SRR942239_1M_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942244_1.fastq.gz 1000000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_1M/SRR942244_1M_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942245_1.fastq.gz 1000000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_1M/SRR942245_1M_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942257_1.fastq.gz 1000000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_1M/SRR942257_1M_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942258_1.fastq.gz 1000000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_1M/SRR942258_1M_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942194_1.fastq.gz 1000000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_1M/SRR942194_1M_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942195_1.fastq.gz 1000000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_1M/SRR942195_1M_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942196_1.fastq.gz 1000000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_1M/SRR942196_1M_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942198_1.fastq.gz 1000000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_1M/SRR942198_1M_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942199_1.fastq.gz 1000000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_1M/SRR942199_1M_1.fastq
+
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942239_1.fastq.gz 100000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_100K/SRR942239_100K_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942244_1.fastq.gz 100000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_100K/SRR942244_100K_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942245_1.fastq.gz 100000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_100K/SRR942245_100K_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942257_1.fastq.gz 100000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_100K/SRR942257_100K_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942258_1.fastq.gz 100000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_100K/SRR942258_100K_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942194_1.fastq.gz 100000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_100K/SRR942194_100K_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942195_1.fastq.gz 100000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_100K/SRR942195_100K_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942196_1.fastq.gz 100000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_100K/SRR942196_100K_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942198_1.fastq.gz 100000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_100K/SRR942198_100K_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942199_1.fastq.gz 100000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_100K/SRR942199_100K_1.fastq
+
+
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942239_1.fastq.gz 10000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_10K/SRR942239_10K_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942244_1.fastq.gz 10000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_10K/SRR942244_10K_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942245_1.fastq.gz 10000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_10K/SRR942245_10K_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942257_1.fastq.gz 10000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_10K/SRR942257_10K_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942258_1.fastq.gz 10000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_10K/SRR942258_10K_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942194_1.fastq.gz 10000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_10K/SRR942194_10K_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942195_1.fastq.gz 10000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_10K/SRR942195_10K_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942196_1.fastq.gz 10000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_10K/SRR942196_10K_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942198_1.fastq.gz 10000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_10K/SRR942198_10K_1.fastq
+seqtk sample -s123 /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_original/SRR942199_1.fastq.gz 10000 > /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/fastq_10K/SRR942199_10K_1.fastq
+
+
+########## Run ththe file in the xsbatch
+xsbatch -c 10 --time 10:00:00 -J subsampling -- sh /groups/hologenomics/andreaac/data/sex_identication/fastqfiles/polarbear/Subsampling.sh
+
