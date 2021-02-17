@@ -1,0 +1,56 @@
+# Find the XY scaffolds of three sex references species in four reference genomes of interst
+# I used the little Satsuma Synteny.sh script
+
+Reference XY
+
+/groups/hologenomics/andreaac/data/References/XY_chr/B.taurus_chrX_NC_037357.1.fasta
+/groups/hologenomics/andreaac/data/References/XY_chr/C.lupusfamiliaris_chrXY.fasta
+/groups/hologenomics/andreaac/data/References/XY_chr/H.sapiens_chrXY.fasta
+
+Reference genomes
+/groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_000687225.1_UrsMar_1.0_genomic_10kb.fasta
+/groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002007445.2_ASM200744v2_genomic_10kb.fasta
+/groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_014441545.1_ROS_Cfam_1.0_genomic_10kb.fasta
+/groups/hologenomics/andreaac/data/sex_identication/references_10kb/UrsMar_1.0_HiC_10kb.fasta
+
+Outputfolder
+mkdir Cow_X_UrsMar_1.0_genomic_10kb
+mkdir Dog_XY_UrsMar_1.0_genomic_10kb
+mkdir Human_XY_UrsMar_1.0_genomic_10kb
+
+mkdir Cow_X_Amel_ASM200744v2_genomic_10kb
+mkdir Dog_XY_Amel_ASM200744v2_genomic_10kb
+mkdir Human_XY_Amel_ASM200744v2_genomic_10kb
+
+mkdir Cow_X_Cfam_1.0_genomic_10kb
+mkdir Dog_XY_Cfam_1.0_genomic_10kb
+mkdir Human_XY_Cfam_1.0_genomic_10kb
+
+mkdir Cow_X_UrsMar_1.0_HiC_10kb
+mkdir Dog_XY_UrsMar_1.0_HiC_10kb
+mkdir Human_XY_UrsMar_1.0_HiC_10kb
+
+
+## 20210217
+### Using xsbatch and the script Satsumasynteny.sh
+
+#1 - Threads
+#2 - Query sequence (genome of interest)
+#3 - Target sequence (Chromosomes)
+#4 - Output_directory
+
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_000687225.1_UrsMar_1.0_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/B.taurus_chrX_NC_037357.1.fasta /groups/hologenomics/andreaac/data/References/XY_chr/Cow_X_UrsMar_1.0_genomic_10kb
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_000687225.1_UrsMar_1.0_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/C.lupusfamiliaris_chrXY.fasta /groups/hologenomics/andreaac/data/References/Dog_XY_UrsMar_1.0_genomic_10kb
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_000687225.1_UrsMar_1.0_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/H.sapiens_chrXY.fasta /groups/hologenomics/andreaac/data/References/XY_chr/Human_XY_UrsMar_1.0_genomic_10kb
+
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002007445.2_ASM200744v2_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/B.taurus_chrX_NC_037357.1.fasta /groups/hologenomics/andreaac/data/References/XY_chr/Cow_X_Amel_ASM200744v2_genomic_10kb
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002007445.2_ASM200744v2_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/C.lupusfamiliaris_chrXY.fasta /groups/hologenomics/andreaac/data/References/Dog_XY_Amel_ASM200744v2_genomic_10kb
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002007445.2_ASM200744v2_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/H.sapiens_chrXY.fasta /groups/hologenomics/andreaac/data/References/XY_chr/Human_XY_Amel_ASM200744v2_genomic_10kb
+
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_014441545.1_ROS_Cfam_1.0_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/B.taurus_chrX_NC_037357.1.fasta /groups/hologenomics/andreaac/data/References/XY_chr/Cow_X_Cfam_1.0_genomic_10kb
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_014441545.1_ROS_Cfam_1.0_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/C.lupusfamiliaris_chrXY.fasta /groups/hologenomics/andreaac/data/References/Dog_XY_Cfam_1.0_genomic_10kb
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_014441545.1_ROS_Cfam_1.0_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/H.sapiens_chrXY.fasta /groups/hologenomics/andreaac/data/References/XY_chr/Human_XY_Cfam_1.0_genomic_10kb
+
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/UrsMar_1.0_HiC_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/B.taurus_chrX_NC_037357.1.fasta /groups/hologenomics/andreaac/data/References/XY_chr/Cow_X_UrsMar_1.0_HiC_10kb
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/UrsMar_1.0_HiC_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/C.lupusfamiliaris_chrXY.fasta /groups/hologenomics/andreaac/data/References/Dog_XY_UrsMar_1.0_HiC_10kb
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/UrsMar_1.0_HiC_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/H.sapiens_chrXY.fasta /groups/hologenomics/andreaac/data/References/XY_chr/Human_XY_UrsMar_1.0_HiC_10kb
