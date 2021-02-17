@@ -36,7 +36,7 @@ mkdir Cow_X_UrsMar_1.0_HiC_10kb
 mkdir Dog_XY_UrsMar_1.0_HiC_10kb
 mkdir Human_XY_UrsMar_1.0_HiC_10kb
 
-Outputfolder for Beluga
+Output folder for Beluga
 mkdir Cow_X_Ddel_ASM228892v1_genomic_10kb
 mkdir Dog_XY_Ddel_ASM228892v1_genomic_10kb
 mkdir Human_XY_Ddel_ASM228892v1_genomic_10kb
@@ -73,21 +73,21 @@ Output directory for Polar bear
 
 
 Output directory for Beluga
-/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Cow_X_UrsMar_1.0_genomic_10kb
-/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Dog_XY_UrsMar_1.0_genomic_10kb
-/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Human_XY_UrsMar_1.0_genomic_10kb
-
-/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Cow_X_Amel_ASM200744v2_genomic_10kb
-/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Dog_XY_Amel_ASM200744v2_genomic_10kb
-/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Human_XY_Amel_ASM200744v2_genomic_10kb
-
-/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Cow_X_Cfam_1.0_genomic_10kb
-/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Dog_XY_Cfam_1.0_genomic_10kb
-/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Human_XY_Cfam_1.0_genomic_10kb
-
-/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Cow_X_UrsMar_1.0_HiC_10kb
-/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Dog_XY_UrsMar_1.0_HiC_10kb
-/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Human_XY_UrsMar_1.0_HiC_10kb
+/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Cow_X_Ddel_ASM228892v1_genomic_10kb
+/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Dog_XY_Ddel_ASM228892v1_genomic_10kb
+/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Human_XY_Ddel_ASM228892v1_genomic_10kb
+                                                                             
+/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Cow_X_Ddel_ASM228892v3_genomic_10kb
+/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Dog_XY_Ddel_ASM228892v3_genomic_10kb
+/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Human_XY_Ddel_ASM228892v3_genomic_10kb
+                                                                             
+/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Cow_X_Oorc_1.1_10kb
+/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Dog_XY_Oorc_1.1_10kb
+/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Human_XY_Oorc_1.1_10kb
+                                                                             
+/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Cow_X_ARS-UCD1.2_genomic_10kb
+/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Dog_XY_ARS-UCD1.2_genomic_10kb
+/groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Human_XY_ARS-UCD1.2_genomic_10kb
 
 
 
@@ -108,10 +108,28 @@ xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andrea
 xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002007445.2_ASM200744v2_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/C.lupusfamiliaris_chrXY.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Dog_XY_Amel_ASM200744v2_genomic_10kb
 xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002007445.2_ASM200744v2_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/H.sapiens_chrXY.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Human_XY_Amel_ASM200744v2_genomic_10kb
 
-xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_014441545.1_ROS_Cfam_1.0_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/B.taurus_chrX_NC_037357.1.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Cow_X_Cfam_1.0_genomic_10kb
-xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_014441545.1_ROS_Cfam_1.0_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/C.lupusfamiliaris_chrXY.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Dog_XY_Cfam_1.0_genomic_10kb
+#xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_014441545.1_ROS_Cfam_1.0_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/B.taurus_chrX_NC_037357.1.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Cow_X_Cfam_1.0_genomic_10kb
+#xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_014441545.1_ROS_Cfam_1.0_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/C.lupusfamiliaris_chrXY.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Dog_XY_Cfam_1.0_genomic_10kb
 xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_014441545.1_ROS_Cfam_1.0_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/H.sapiens_chrXY.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Human_XY_Cfam_1.0_genomic_10kb
 
-xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/UrsMar_1.0_HiC_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/B.taurus_chrX_NC_037357.1.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Cow_X_UrsMar_1.0_HiC_10kb
+#xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/UrsMar_1.0_HiC_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/B.taurus_chrX_NC_037357.1.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Cow_X_UrsMar_1.0_HiC_10kb
 xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/UrsMar_1.0_HiC_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/C.lupusfamiliaris_chrXY.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Dog_XY_UrsMar_1.0_HiC_10kb
-xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/UrsMar_1.0_HiC_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/H.sapiens_chrXY.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Human_XY_UrsMar_1.0_HiC_10kb
+#xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/UrsMar_1.0_HiC_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/H.sapiens_chrXY.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Human_XY_UrsMar_1.0_HiC_10kb
+
+
+
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002288925.1_ASM228892v1_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/B.taurus_chrX_NC_037357.1.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Cow_X_Ddel_ASM228892v1_genomic_10kb
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002288925.1_ASM228892v1_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/C.lupusfamiliaris_chrXY.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Dog_XY_Ddel_ASM228892v1_genomic_10kb
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002288925.1_ASM228892v1_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/H.sapiens_chrXY.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Human_XY_Ddel_ASM228892v1_genomic_10kb
+                                                                                                                                                                                                                                                                                                                                                                                                         
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002288925.3_ASM228892v3_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/B.taurus_chrX_NC_037357.1.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Cow_X_Ddel_ASM228892v3_genomic_10kb
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002288925.3_ASM228892v3_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/C.lupusfamiliaris_chrXY.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Dog_XY_Ddel_ASM228892v3_genomic_10kb
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002288925.3_ASM228892v3_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/H.sapiens_chrXY.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Human_XY_Ddel_ASM228892v3_genomic_10kb
+                                                                                                                                                                                                                                                                                                                                                                                                         
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_000331955.2_Oorc_1.1_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/B.taurus_chrX_NC_037357.1.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Cow_X_Oorc_1.1_10kb
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_000331955.2_Oorc_1.1_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/C.lupusfamiliaris_chrXY.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Dog_XY_Oorc_1.1_10kb
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_000331955.2_Oorc_1.1_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/H.sapiens_chrXY.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Human_XY_Oorc_1.1_10kb
+                                                                                                                                                                                                                                                                                                                                                                                                         
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002263795.2_ARS-UCD1.2_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/B.taurus_chrX_NC_037357.1.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Cow_X_ARS-UCD1.2_genomic_10kb
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002263795.2_ARS-UCD1.2_genomic_10kb.fasta/groups/hologenomics/andreaac/data/References/XY_chr/C.lupusfamiliaris_chrXY.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Dog_XY_ARS-UCD1.2_genomic_10kb
+xsbatch -c 6 --mem-per-cpu 10G --time 90:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002263795.2_ARS-UCD1.2_genomic_10kb.fasta/groups/hologenomics/andreaac/data/References/XY_chr/H.sapiens_chrXY.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Human_XY_ARS-UCD1.2_genomic_10kb
