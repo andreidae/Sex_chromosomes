@@ -1,0 +1,145 @@
+############ 
+#Filtering satsuma output
+
+This script will extract the Y and X chromosomes with the coordinates we are intersted
+
+
+######## Extract regions mapping to X and Y independently
+grep chromosome_Y satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > Y.bed
+grep chromosome_X satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > X.bed
+
+######## Remove regions that overlap between the 2 from the X bed
+grep -v -f <(bedtools intersect -a X.bed -b Y.bed) X.bed > X_trim.bed
+
+######## Or one long confusing command
+grep -v -f <(bedtools intersect -a <(grep chromosome_X satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}') -b <(grep chromosome_Y satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}')) <(grep chromosome_X satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}') > X_trim.bed
+
+
+#####################################################
+###############   File NAMES
+
+#1
+ref.Pbear1_X_based_on_DogX.bed
+ref.Pbear1_Y_based_on_DogY.bed
+ref.Pbear1_X_trim_based_on_DogX_DogY.bed
+
+#2
+ref.Pbear1_X_based_on_HumanX.bed
+ref.Pbear1_Y_based_on_HumanY.bed
+ref.Pbear1_X_trim_based_on_HumanX_HumanY.bed
+
+#3
+ref.Pbear2_X_based_on_DogX.bed
+ref.Pbear2_Y_based_on_DogY.bed
+ref.Pbear2_X_trim_based_on_DogX_DogY.bed
+
+#4
+ref.Pbear2_X_based_on_HumanX.bed
+ref.Pbear2_Y_based_on_HumanY.bed
+ref.Pbear2_X_trim_based_on_HumanX_HumanY.bed
+
+#5
+ref.Panda_X_based_on_DogX.bed
+ref.Panda_Y_based_on_DogY.bed
+ref.Panda_X_trim_based_on_DogX_DogY.bed
+	
+#6
+ref.Panda_X_based_on_HumanX.bed
+ref.Panda_Y_based_on_HumanY.bed
+ref.Panda_X_trim_based_on_HumanX_HumanY.bed
+
+#7
+ref.Beluga1_X_based_on_CowX.bed
+ref.Beluga1_Y_based_on_HumanY.bed
+ref.Beluga1_X_trim_based_on_CowX_HumanY.bed
+
+#8
+ref.Beluga1_X_based_on_HumanX.bed
+ref.Beluga1_Y_based_on_HumanY.bed
+ref.Beluga1_X_trim_based_on_HumanX_HumanY.bed
+
+#9
+ref.Beluga3_X_based_on_CowX.bed
+ref.Beluga3_Y_based_on_HumanY.bed
+ref.Beluga3_X_trim_based_on_CowX_HumanY.bed
+
+#10
+ref.Beluga3_X_based_on_HumanX.bed
+ref.Beluga3_Y_based_on_HumanY.bed
+ref.Beluga3_X_trim_based_on_HumanX_HumanY.bed
+
+#11
+
+ref.Orca_X_based_on_CowX.bed
+ref.Orca_Y_based_on_HumanY.bed
+ref.Orca_X_trim_based_on_CowX_HumanY.bed
+
+#12
+ref.Orca_X_based_on_HumanX.bed
+ref.Orca_Y_based_on_HumanY.bed
+ref.Orca_X_trim_based_on_HumanX_HumanY.bed
+
+
+
+#######################################################################################################
+###################### All commands, run each on each folder 
+bedtools/v2.29.0
+
+grep chromosome_Y satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > Y.bed
+grep chromosome_X satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > X.bed
+grep -v -f <(bedtools intersect -a X.bed -b Y.bed) X.bed > ref.Pbear1_X_trim_based_on_DogX_DogY.bed
+
+#2
+grep chromosome_Y satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > Y.bed
+grep chromosome_X satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > X.bed
+grep -v -f <(bedtools intersect -a X.bed -b Y.bed) X.bed > ref.Pbear1_X_trim_based_on_HumanX_HumanY.bed
+
+#3
+grep chromosome_Y satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > Y.bed
+grep chromosome_X satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > X.bed
+grep -v -f <(bedtools intersect -a X.bed -b Y.bed) X.bed > ref.Pbear2HiC_X_trim_based_on_DogX_DogY.bed
+
+#4
+grep chromosome_Y satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > Y.bed
+grep chromosome_X satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > X.bed
+grep -v -f <(bedtools intersect -a X.bed -b Y.bed) X.bed > ref.Pbear2HiC_X_trim_based_on_HumanX_HumanY.bed
+
+#5
+grep chromosome_Y satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > Y.bed
+grep chromosome_X satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > X.bed
+grep -v -f <(bedtools intersect -a X.bed -b Y.bed) X.bed > ref.Panda_X_trim_based_on_DogX_DogY.bed
+	
+#6
+grep chromosome_Y satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > Y.bed
+grep chromosome_X satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > X.bed
+grep -v -f <(bedtools intersect -a X.bed -b Y.bed) X.bed > ref.Panda_X_trim_based_on_HumanX_HumanY.bed
+
+#7
+grep chromosome_Y satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > Y.bed
+grep chromosome_X satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > X.bed
+grep -v -f <(bedtools intersect -a X.bed -b Y.bed) X.bed > ref.Beluga1_X_trim_based_on_CowX_HumanY.bed
+
+#8
+grep chromosome_Y satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > Y.bed
+grep chromosome_X satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > X.bed
+grep -v -f <(bedtools intersect -a X.bed -b Y.bed) X.bed > ref.Beluga1_X_trim_based_on_HumanX_HumanY.bed
+
+#9
+grep chromosome_Y satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > Y.bed
+grep chromosome_X satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > X.bed
+grep -v -f <(bedtools intersect -a X.bed -b Y.bed) X.bed > ref.Beluga3_X_trim_based_on_CowX_HumanY.bed
+
+#10
+grep chromosome_Y satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > Y.bed
+grep chromosome_X satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > X.bed
+grep -v -f <(bedtools intersect -a X.bed -b Y.bed) X.bed > ref.Beluga3_X_trim_based_on_HumanX_HumanY.bed
+
+#11
+grep chromosome_Y satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > Y.bed
+grep chromosome_X satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > X.bed
+grep -v -f <(bedtools intersect -a X.bed -b Y.bed) X.bed > ref.Orca_X_trim_based_on_CowX_HumanY.bed
+
+#11
+grep chromosome_Y satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > Y.bed
+grep chromosome_X satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > X.bed
+grep -v -f <(bedtools intersect -a X.bed -b Y.bed) X.bed > ref.Orca_X_trim_based_on_HumanX_HumanY.bed
