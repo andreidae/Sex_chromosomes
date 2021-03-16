@@ -139,6 +139,7 @@ xsbatch -c 6 --mem-per-cpu 8G --nodelist=node924 --time 6-10:00:00 -- sh /groups
 xsbatch -c 6 --mem-per-cpu 8G --nodelist=node925 --time 6-10:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002288925.3_ASM228892v3_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/BtaurosX_HsapiensY.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Cow_X_HumanY_Ddel_ASM228892v3_genomic_10kb
 xsbatch -c 6 --mem-per-cpu 8G --nodelist=node922 --time 6-10:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_000331955.2_Oorc_1.1_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/BtaurosX_HsapiensY.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Cow_X_HumanY_Oorc_1.1_10kb
 
+xsbatch -c 6 --mem-per-cpu 8G --nodelist=node922 --time 8-10:00:00 -- sh /groups/hologenomics/andreaac/Scripts/SatsumaSynteny.sh 10 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002263795.2_ARS-UCD1.2_genomic_10kb.fasta /groups/hologenomics/andreaac/data/References/XY_chr/BtaurosX_HsapiensY.fasta /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Cow_X_HumanY_ARS-UCD1.2_genomic_10kb
 
  --partition=<partition_names>
  --nodelist=<node name list>

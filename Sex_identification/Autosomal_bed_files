@@ -17,6 +17,9 @@ ref.Pbear1_autosomal_based_on_HumanX_HumanY.bed
 ref.Pbear2HiC_autosomal_based_on_DogX_DogY.bed
 ref.Pbear2HiC_autosomal_based_on_HumanX_HumanY.bed
 
+ref.Dog_autosomal_based_on_DogX_DogY.bed
+ref.Cow_autosomal_based_on_CowX_HumanY.bed
+
 Reference.fasta.fai names
 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002288925.1_ASM228892v1_genomic_10kb.fasta.fai
 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002288925.1_ASM228892v1_genomic_10kb.fasta.fai
@@ -26,13 +29,16 @@ Reference.fasta.fai names
 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_000331955.2_Oorc_1.1_10kb.fasta.fai
 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002007445.2_ASM200744v2_genomic_10kb.fasta.fai
 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002007445.2_ASM200744v2_genomic_10kb.fasta.fai
+
 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_000687225.1_UrsMar_1.0_genomic_10kb.fasta.fai
 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_000687225.1_UrsMar_1.0_genomic_10kb.fasta.fai
 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/UrsMar_1.0_HiC_10kb.fasta.fai
 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/UrsMar_1.0_HiC_10kb.fasta.fai
 
-/groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002263795.2_ARS-UCD1.2_genomic_10kb.fasta.fai
 /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_014441545.1_ROS_Cfam_1.0_genomic_10kb.fasta.fai
+/groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002263795.2_ARS-UCD1.2_genomic_10kb.fasta.fai
+
+
 
 
 Scrip to run on each folder
@@ -52,4 +58,7 @@ grep -v -w -f <(cat Y.bed X.bed | cut -f 1 | sort | uniq) /groups/hologenomics/a
 grep -v -w -f <(cat Y.bed X.bed | cut -f 1 | sort | uniq) /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_000687225.1_UrsMar_1.0_genomic_10kb.fasta.fai | awk '{print $1"\t1\t"$2}' > /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files/ref.Pbear1_autosomal_based_on_HumanX_HumanY.bed
 grep -v -w -f <(cat Y.bed X.bed | cut -f 1 | sort | uniq) /groups/hologenomics/andreaac/data/sex_identication/references_10kb/UrsMar_1.0_HiC_10kb.fasta.fai | awk '{print $1"\t1\t"$2}' > /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files/ref.Pbear2HiC_autosomal_based_on_DogX_DogY.bed
 grep -v -w -f <(cat Y.bed X.bed | cut -f 1 | sort | uniq) /groups/hologenomics/andreaac/data/sex_identication/references_10kb/UrsMar_1.0_HiC_10kb.fasta.fai | awk '{print $1"\t1\t"$2}' > /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files/ref.Pbear2HiC_autosomal_based_on_HumanX_HumanY.bed
+
+grep -v -w -f <(cat Y.bed X.bed | cut -f 1 | sort | uniq) /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_014441545.1_ROS_Cfam_1.0_genomic_10kb.fasta.fai | awk '{print $1"\t1\t"$2}' > /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files/ref.Dog_autosomal_based_on_DogX_DogY.bed
+grep -v -w -f <(cat Y.bed X.bed | cut -f 1 | sort | uniq) /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002263795.2_ARS-UCD1.2_genomic_10kb.fasta.fai | awk '{print $1"\t1\t"$2}' > /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files/ref.Cow_autosomal_based_on_CowX_HumanY.bed
 
