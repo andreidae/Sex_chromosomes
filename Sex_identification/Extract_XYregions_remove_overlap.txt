@@ -14,6 +14,12 @@ grep -v -f <(bedtools intersect -a X.bed -b Y.bed) X.bed > X_trim.bed
 ######## Or one long confusing command
 grep -v -f <(bedtools intersect -a <(grep chromosome_X satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}') -b <(grep chromosome_Y satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}')) <(grep chromosome_X satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}') > X_trim.bed
 
+########### Change name of Scaffold to match the reference fasta.fai file
+# Satsuma seems to change the name
+awk '{print $2,$3,$1}' X_trim.bed | perl -pe 's/.1_*/.1/' | awk '{print $3"\t"$1"\t"$2}' > X_trim_rename.bed
+
+awk '{print $2,$3,$1}' ref.Pbear1_X_trim_based_on_DogX_DogY.bed | perl -pe 's/.1_*/.1/' | awk '{print $3"\t"$1"\t"$2}' > ref.Pbear1_X_trim_based_on_DogX_DogY.renamed.bed
+
 
 #####################################################
 ###############   File NAMES
@@ -143,3 +149,19 @@ grep -v -f <(bedtools intersect -a X.bed -b Y.bed) X.bed > ref.Orca_X_trim_based
 grep chromosome_Y satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > Y.bed
 grep chromosome_X satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > X.bed
 grep -v -f <(bedtools intersect -a X.bed -b Y.bed) X.bed > ref.Orca_X_trim_based_on_HumanX_HumanY.bed
+
+
+
+################# Substitute the name of the scaffold
+awk '{print $2,$3,$1}' ref.Pbear1_X_trim_based_on_DogX_DogY.bed | perl -pe 's/.1_.*/.1/' | awk '{print $3"\t"$1"\t"$2}' > ref.Pbear1_X_trim_based_on_DogX_DogY.renamed.bed
+awk '{print $2,$3,$1}' ref.Pbear1_X_trim_based_on_HumanX_HumanY.bed | perl -pe 's/.1_.*/.1/' | awk '{print $3"\t"$1"\t"$2}' > ref.Pbear1_X_trim_based_on_HumanX_HumanY.renamed.bed
+
+awk '{print $2,$3,$1}' ref.Orca_X_trim_based_on_CowX_HumanY.bed | perl -pe 's/.1_.*/.1/' | awk '{print $3"\t"$1"\t"$2}' > ref.Orca_X_trim_based_on_CowX_HumanY.renamed.bed
+awk '{print $2,$3,$1}' ref.Orca_X_trim_based_on_HumanX_HumanY.bed | perl -pe 's/.1_.*/.1/' | awk '{print $3"\t"$1"\t"$2}' > ref.Orca_X_trim_based_on_HumanX_HumanY.renamed.bed
+
+awk '{print $2,$3,$1}' ref.Beluga1_X_trim_based_on_CowX_HumanY.bed | perl -pe 's/.1_.*/.1/' | awk '{print $3"\t"$1"\t"$2}' > ref.Beluga1_X_trim_based_on_CowX_HumanY.renamed.bed
+awk '{print $2,$3,$1}' ref.Beluga1_X_trim_based_on_HumanX_HumanY.bed | perl -pe 's/.1_.*/.1/' | awk '{print $3"\t"$1"\t"$2}' > ref.Beluga1_X_trim_based_on_HumanX_HumanY.renamed.bed
+
+awk '{print $2,$3,$1}' ref.Beluga3_X_trim_based_on_CowX_HumanY.bed | perl -pe 's/.1_.*/.1/' | awk '{print $3"\t"$1"\t"$2}' > ref.Beluga3_X_trim_based_on_CowX_HumanY.renamed.bed
+awk '{print $2,$3,$1}' ref.Beluga3_X_trim_based_on_HumanX_HumanY.bed | perl -pe 's/.1_.*/.1/' | awk '{print $3"\t"$1"\t"$2}' > ref.Beluga3_X_trim_based_on_HumanX_HumanY.renamed.bed
+
