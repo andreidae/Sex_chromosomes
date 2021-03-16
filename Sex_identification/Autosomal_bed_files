@@ -1,0 +1,21 @@
+
+grep -v -w -f <(cat Y.bed X.bed | cut -f 1 | sort | uniq) reference.fasta.fai | awk '{print $1"\t1\t"$2}'  > Autosomes.bed
+
+
+Output names
+ref.Beluga1_autosomal_based_on_CowX_HumanY.bed
+ref.Beluga1_autosomal_based_on_HumanX_HumanY.bed
+ref.Beluga3_autosomal_based_on_CowX_HumanY.bed
+ref.Beluga3_autosomal_based_on_HumanX_HumanY.bed
+ref.Orca_autosomal_based_on_CowX_HumanY.bed
+ref.Orca_autosomalm_based_on_HumanX_HumanY.bed
+ref.Panda_autosomal_based_on_DogX_DogY.bed
+ref.Panda_autosomal_based_on_HumanX_HumanY.bed
+ref.Pbear1_autosomal_based_on_DogX_DogY.bed
+ref.Pbear1_autosomal_based_on_HumanX_HumanY.bed
+ref.Pbear2HiC_autosomal_based_on_DogX_DogY.bed
+ref.Pbear2HiC_autosomal_based_on_HumanX_HumanY.bed
+
+Reference.fasta.fai names
+
+grep -v -w -f <(cat Y.bed X.bed | cut -f 1 | sort | uniq) reference.fasta.fai | awk '{print $1"\t1\t"$2}' > /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files/
