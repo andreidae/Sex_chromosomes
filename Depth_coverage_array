@@ -1,0 +1,48 @@
+# Script calcualte the depth of the autosome and sex chromosome of bam file using an array
+# The first step is to make an script to create a list of commands and then run each line as an array
+# Let's called the script Depth_script.sh
+
+module load htslib/v1.9
+module load samtools/v1.9
+
+####################################################
+## $1 Directory Autosomes
+## $2 Autosomes.bed
+## $3 Directory X_trim
+## $4 X_trim.bed
+## $5 SatsumaName e.g.DogX_DogY
+## $6 Output_folder
+
+
+#!/bin/bash
+for file in *bam
+do
+  echo samtools depth -a -q 25 -Q 25 -b $1/$2 $file ">" $6/${file}_$5_Autosomes.txt >> $6/runs.txt
+  echo samtools depth -a -q 25 -Q 25 -b $3/$4 $file ">" $6/${file}_$5_X_trim.txt >> $6/runs.txt
+
+done
+cat $6/runs.txt | xsbatch -R -c 30 --mem-per-cpu=2G -J test --
+
+######################################################
+
+# To run the script you need to load 2 modules. You have to call the script from the folder with the bam file
+# For the output file, I divided it in species name, reference genome, and satsuma name, make sure you have those names in your output folder
+# Example of folders: polarbear/ref_PBear1/Satsuma_DogX_DogY
+
+Examples to run the script 
+
+module load htslib/v1.9
+module load samtools/v1.9
+
+# Run for PBear1
+# Run the script from the folder with the bam files: /groups/hologenomics/andreaac/data/sex_identication/downsampling_bam/polarbear/ref_PBear1
+sh /groups/hologenomics/andreaac/data/sex_identication/depth_calculation/polarbear/ref_PBear1/Depth_script.sh /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files ref.Pbear1_autosomal_based_on_DogX_DogY.bed /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/X_trim_bed_files ref.Pbear1_X_trim_based_on_DogX_DogY.renamed.bed DogX_DogY /groups/hologenomics/andreaac/data/sex_identication/depth_calculation/polarbear/ref_PBear1/Satsuma_DogX_DogY
+sh /groups/hologenomics/andreaac/data/sex_identication/depth_calculation/polarbear/ref_PBear1/Depth_script.sh /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files ref.Pbear1_autosomal_based_on_HumanX_HumanY.bed /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/X_trim_bed_files ref.Pbear1_X_trim_based_on_HumanX_HumanY.renamed.bed HumanX_HumanY /groups/hologenomics/andreaac/data/sex_identication/depth_calculation/polarbear/ref_PBear1/Satsuma_HumanX_HumanY
+
+
+# Run for PBear2
+Run the script from the folder with the bam files: /groups/hologenomics/andreaac/data/sex_identication/downsampling_bam/polarbear/ref_PBear2
+sh /groups/hologenomics/andreaac/data/sex_identication/depth_calculation/polarbear/ref_PBear2/Depth_script.sh /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files ref.Pbear2HiC_autosomal_based_on_DogX_DogY.bed /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/X_trim_bed_files ref.Pbear2HiC_X_trim_based_on_DogX_DogY.renamed.bed DogX_DogY /groups/hologenomics/andreaac/data/sex_identication/depth_calculation/polarbear/ref_PBear2/Satsuma_DogX_DogY
+sh /groups/hologenomics/andreaac/data/sex_identication/depth_calculation/polarbear/ref_PBear2/Depth_script.sh /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files ref.Pbear2HiC_autosomal_based_on_HumanX_HumanY.bed /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/X_trim_bed_files ref.Pbear2HiC_X_trim_based_on_HumanX_HumanY.renamed.bed HumanX_HumanY /groups/hologenomics/andreaac/data/sex_identication/depth_calculation/polarbear/ref_PBear2/Satsuma_HumanX_HumanY
+
+
