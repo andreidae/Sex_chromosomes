@@ -180,4 +180,4 @@ awk '{print $2,$3,$1}' ref.Beluga3_X_trim_based_on_HumanX_HumanY.bed | perl -pe 
 
 awk '{print $2,$3,$1}' ref.Dog_X_trim_based_on_DogX_DogY.bed | perl -pe 's/.1_.*/.1/' | awk '{print $3"\t"$1"\t"$2}' > ref.Dog_X_trim_based_on_DogX_DogY.renamed.bed
 
-awk '{print $2,$3,$1}' ref.Cow_X_trim_based_on_CowX_HumanY.bed | perl -pe 's/.1_.*/.1/' | awk '{print $3"\t"$1"\t"$2}' > ref.Cow_X_trim_based_on_CowX_HumanY.renamed.bed
+awk '{print $2,$3,$1}' ref.Cow_X_trim_based_on_CowX_HumanY.bed | perl -pe 's/.2_.*/.2/' | awk '{print $3"\t"$1"\t"$2}' > ref.Cow_X_trim_based_on_CowX_HumanY.renamed.bed
