@@ -85,7 +85,10 @@ ref.Orca_X_based_on_HumanX.bed
 ref.Orca_Y_based_on_HumanY.bed
 ref.Orca_X_trim_based_on_HumanX_HumanY.bed
 
-
+#12
+ref.Cow_X_based_on_HumanX.bed
+ref.Cow_Y_based_on_HumanY.bed
+ref.Cow_X_trim_based_on_CowX_HumanY.bed
 
 #######################################################################################################
 ###################### All commands, run each on each folder 
@@ -150,9 +153,15 @@ grep chromosome_Y satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > Y
 grep chromosome_X satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > X.bed
 grep -v -f <(bedtools intersect -a X.bed -b Y.bed) X.bed > ref.Orca_X_trim_based_on_HumanX_HumanY.bed
 
+#12
 grep chromosome_Y satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > Y.bed
 grep chromosome_X satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > X.bed
 grep -v -f <(bedtools intersect -a X.bed -b Y.bed) X.bed > ref.Dog_X_trim_based_on_DogX_DogY.bed
+
+#13
+grep chromosome_Y satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > Y.bed
+grep chromosome_X satsuma_summary.chained.out | awk '{print $4"\t"$5"\t"$6}' > X.bed
+grep -v -f <(bedtools intersect -a X.bed -b Y.bed) X.bed > ref.Cow_X_trim_based_on_CowX_HumanY.bed
 
 
 
@@ -170,3 +179,5 @@ awk '{print $2,$3,$1}' ref.Beluga3_X_trim_based_on_CowX_HumanY.bed | perl -pe 's
 awk '{print $2,$3,$1}' ref.Beluga3_X_trim_based_on_HumanX_HumanY.bed | perl -pe 's/.1_.*/.1/' | awk '{print $3"\t"$1"\t"$2}' > ref.Beluga3_X_trim_based_on_HumanX_HumanY.renamed.bed
 
 awk '{print $2,$3,$1}' ref.Dog_X_trim_based_on_DogX_DogY.bed | perl -pe 's/.1_.*/.1/' | awk '{print $3"\t"$1"\t"$2}' > ref.Dog_X_trim_based_on_DogX_DogY.renamed.bed
+
+awk '{print $2,$3,$1}' ref.Cow_X_trim_based_on_CowX_HumanY.bed | perl -pe 's/.2_.*/.2/' | awk '{print $3"\t"$1"\t"$2}' > ref.Cow_X_trim_based_on_CowX_HumanY.renamed.bed

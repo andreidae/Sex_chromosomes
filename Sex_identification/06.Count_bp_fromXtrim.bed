@@ -1,0 +1,7 @@
+
+#Count total number of bp - to find equivalent in autosomes
+cat X_trim.bed | awk '{if ($2<$3) print $3-$2; else print $2-$3;}'  | awk '{sum+=$1} END {print sum}'
+
+#For all files together use: 
+for file in *renamed.bed; do cat $file | awk '{if ($2<$3) print $3-$2; else print $2-$3;}' | awk '{sum+=$1} END {print sum}' | paste <(echo $file) - >> Total_number_bp.txt; done
+
