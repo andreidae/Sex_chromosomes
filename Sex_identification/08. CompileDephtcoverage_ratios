@@ -1,7 +1,7 @@
 
 #To compile the ratio results
 
-for file in *_ratios.txt; do awk -v name=$file '{print name,$0}' $file; done | sed 's/_ratios.txt//g' | sed 's/_1.bam_/ /g' | sed 's/_10kb_/ /g' | awk -F "." '{print $1,$2"."$3}' > All_ratios.txt
+for file in *_ratios.txt; do awk -v name=$file '{print name,$0}' $file; done | sed 's/_ratios.txt//g' | sed 's/_1.bam_/ /g' | sed 's/_10kb_/ /g' | awk -F "." '{print $1,$2"."$3}' > Summary_ratios.txt
 
 
 #Explanation
