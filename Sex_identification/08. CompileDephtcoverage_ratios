@@ -1,0 +1,22 @@
+
+#To compile the ratio results
+
+for file in *_ratios.txt; do awk -v name=$file '{print name,$0}' $file; done | sed 's/_ratios.txt//g' | sed 's/_1.bam_/ /g' | sed 's/_10kb_/ /g' | awk -F "." '{print $1,$2"."$3}' > All_ratios.txt
+
+
+#Explanation
+
+# Print file name and the file information
+awk -v name=$file '{print name,$0}' $file; done
+
+# substitute the word "_ratios.txt" for nothing
+sed 's/_ratios.txt//g'
+
+# substitute the word _1.bam for a space
+sed 's/_1.bam_/ /g' 
+
+# substitute the word _10kb_ for a space
+sed 's/_10kb_/ /g'
+
+# use point as field separator to divide the first column
+awk -F "." '{print $1,$2"."$3}'
