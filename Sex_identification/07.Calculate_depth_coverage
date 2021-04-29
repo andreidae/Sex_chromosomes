@@ -33,6 +33,7 @@ cd /groups/hologenomics/andreaac/data/sex_identication/downsampling_bam/beluga/r
 xsbatch -c 30 --mem-per-cpu=2G -J Cow_human --time 8-10:00:00 -- sh /groups/hologenomics/andreaac/data/sex_identication/depth_calculation/Coverage_script.sh /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files/ref.Cow_autosomal_based_on_CowX_HumanY.bed CowX_HumanY /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/X_trim_bed_files/ref.Cow_X_trim_based_on_CowX_HumanY.renamed.bed /groups/hologenomics/andreaac/data/sex_identication/depth_calculation/beluga/ref_COW/Satsuma_CowX_HumanY
 
 
+
 # Beluga ref_Beluga1
 ## Run in: 
 cd /groups/hologenomics/andreaac/data/sex_identication/downsampling_bam/beluga/ref_Beluga1_10kb
@@ -51,3 +52,36 @@ xsbatch -c 30 --mem-per-cpu=2G -J beluga3_cow --time 6-10:00:00 -- sh /groups/ho
 cd /groups/hologenomics/andreaac/data/sex_identication/downsampling_bam/beluga/ref_Beluga3_10kb
 xsbatch -c 20 --mem-per-cpu=2G -J beluga3_human --time 6-10:00:00 -- sh /groups/hologenomics/andreaac/data/sex_identication/depth_calculation/Coverage_script.sh /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files/ref.Beluga3_autosomal_based_on_HumanX_HumanY.bed HumanX_HumanY /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/X_trim_bed_files/ref.Beluga3_X_trim_based_on_HumanX_HumanY.renamed.bed /groups/hologenomics/andreaac/data/sex_identication/depth_calculation/beluga/ref_Beluga3/Satsuma_HumanX_HumanY
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#################################################################
+### Examples of running it with the new polar bear data
+cd /groups/hologenomics/andreaac/data/polarbear/mapping/bamfiles/ancient/nuclear
+xsbatch -c 30 --mem-per-cpu=2G -J PB2_dog --time 8-10:00:00 -- sh /groups/hologenomics/andreaac/data/polarbear/analysis/Sex/ancient/Coverage_script1.sh /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files/ref.Pbear2HiC_autosomal_based_on_DogX_DogY.bed DogX_DogY /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/X_trim_bed_files/ref.Pbear2HiC_X_trim_based_on_DogX_DogY.renamed.bed /groups/hologenomics/andreaac/data/polarbear/analysis/Sex/ancient/Satsuma_DogX_DogY
+
+## Run in: 
+cd /groups/hologenomics/andreaac/data/polarbear/mapping/bamfiles/ancient/nuclear
+xsbatch -c 30 --mem-per-cpu=2G -J PB2_human --time 8-10:00:00 -- sh /groups/hologenomics/andreaac/data/polarbear/analysis/Sex/ancient/Coverage_script1.sh /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files/ref.Pbear2HiC_autosomal_based_on_HumanX_HumanY.bed HumanX_HumanY /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/X_trim_bed_files/ref.Pbear2HiC_X_trim_based_on_HumanX_HumanY.renamed.bed /groups/hologenomics/andreaac/data/polarbear/analysis/Sex/ancient/Satsuma_HumanX_HumanY
+
+
+## Run in: 
+cd /groups/hologenomics/andreaac/data/polarbear/mapping/bamfiles/modern/nuclear
+xsbatch -c 30 --mem-per-cpu=2G -J PB2m1_dog --time 8-10:00:00 -- sh /groups/hologenomics/andreaac/data/polarbear/analysis/Sex/modern/Coverage_script1.sh /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files/ref.Pbear2HiC_autosomal_based_on_DogX_DogY.bed DogX_DogY /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/X_trim_bed_files/ref.Pbear2HiC_X_trim_based_on_DogX_DogY.renamed.bed /groups/hologenomics/andreaac/data/polarbear/analysis/Sex/modern/Satsuma_DogX_DogY
+xsbatch -c 30 --mem-per-cpu=2G -J PB2m2_dog --time 5-10:00:00 -- sh /groups/hologenomics/andreaac/data/polarbear/analysis/Sex/modern/Coverage_script2.sh /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files/ref.Pbear2HiC_autosomal_based_on_DogX_DogY.bed DogX_DogY /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/X_trim_bed_files/ref.Pbear2HiC_X_trim_based_on_DogX_DogY.renamed.bed /groups/hologenomics/andreaac/data/polarbear/analysis/Sex/modern/Satsuma_DogX_DogY
+
+## Run in: 
+cd /groups/hologenomics/andreaac/data/polarbear/mapping/bamfiles/modern/nuclear
+xsbatch -c 30 --mem-per-cpu=2G -J PB2m1_human --time 6-10:00:00 -- sh /groups/hologenomics/andreaac/data/polarbear/analysis/Sex/modern/Coverage_script1.sh /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files/ref.Pbear2HiC_autosomal_based_on_HumanX_HumanY.bed HumanX_HumanY /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/X_trim_bed_files/ref.Pbear2HiC_X_trim_based_on_HumanX_HumanY.renamed.bed /groups/hologenomics/andreaac/data/polarbear/analysis/Sex/modern/Satsuma_HumanX_HumanY
+xsbatch -c 30 --mem-per-cpu=2G -J PB2m2_human --time 4-10:00:00 -- sh /groups/hologenomics/andreaac/data/polarbear/analysis/Sex/modern/Coverage_script2.sh /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files/ref.Pbear2HiC_autosomal_based_on_HumanX_HumanY.bed HumanX_HumanY /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/X_trim_bed_files/ref.Pbear2HiC_X_trim_based_on_HumanX_HumanY.renamed.bed /groups/hologenomics/andreaac/data/polarbear/analysis/Sex/modern/Satsuma_HumanX_HumanY
