@@ -28,3 +28,9 @@ for file in *_ratios.txt; do awk -v name=$file '{print name,$0}' $file; done | s
 
 # for cow
 for file in *_ratios.txt; do awk -v name=$file '{print name,$0}' $file; done | sed 's/_ratios.txt//g' | sed 's/_1.bam_/ /g' | sed 's/_GCA_002263795.2_ARS-UCD1.2_10kb_/ /g' | awk -F "." '{print $1,$2"."$3}' > Summary_ratios.txt
+
+
+#############
+## For my own polar bear samples
+
+for file in *_ratios.txt; do awk -v name=$file '{print name,$0}' $file; done | sed 's/_ratios.txt//g' | sed 's/.PB.NG.bam_/ /g' > Summary_ratios.txt
