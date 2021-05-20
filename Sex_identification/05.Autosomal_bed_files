@@ -64,6 +64,9 @@ grep -v -w -f <(cat Y.bed X.bed | cut -f 1 | sort | uniq) /groups/hologenomics/a
 
 
 ###########
+# The names where not matching between the reference and Satsuma. We had to cut the name using  the underscore as a delimiter
+# 20210520
+
 cd /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Cow_X_HumanY_Ddel_ASM228892v1_genomic_10kb
 grep -v -w -f <(cat Y.bed X.bed | cut -d "_" -f 1 | sort | uniq)  /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002288925.1_ASM228892v1_genomic_10kb.fasta.fai | awk '{print $1"\t1\t"$2}' > /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files_corrected/ref.Beluga1_autosomal_based_on_CowX_HumanY.bed
 
@@ -92,7 +95,20 @@ grep -v -w -f <(cat Y.bed X.bed | cut -d "_"  -f 1 | sort | uniq) /groups/hologe
 
 
 cd /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Dog_XY_Cfam_1.0_genomic_10kb
-grep -v -w -f <(cat Y.bed X.bed | cut -f 1 | sort | uniq) /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_014441545.1_ROS_Cfam_1.0_genomic_10kb.fasta.fai | awk '{print $1"\t1\t"$2}' > /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files_corrected/ref.Dog_autosomal_based_on_DogX_DogY.bed
+grep -v -w -f <(cat Y.bed X.bed | cut -d "_" -f 1 | sort | uniq) /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_014441545.1_ROS_Cfam_1.0_genomic_10kb.fasta.fai | awk '{print $1"\t1\t"$2}' > /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files_corrected/ref.Dog_autosomal_based_on_DogX_DogY.bed
 
-cd /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Human_XY_Cfam_1.0_genomic_10kb
-grep -v -w -f <(cat Y.bed X.bed | cut -d "_" -f 1 | sort | uniq) /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002263795.2_ARS-UCD1.2_genomic_10kb.fasta.fai | awk '{print $1"\t1\t"$2}' > /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files_corrected/ref.Cow_autosomal_based_on_CowX_HumanY.bed
+cd /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Cow_X_HumanY_ARS-UCD1.2_genomic_10kb
+grep -v -w -f <(cat Y.bed X.bed | cut -d "_" -d "_" -f 1 | sort | uniq) /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_002263795.2_ARS-UCD1.2_genomic_10kb.fasta.fai | awk '{print $1"\t1\t"$2}' > /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files_corrected/ref.Cow_autosomal_based_on_CowX_HumanY.bed
+
+
+cd /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Dog_XY_UrsMar_1.0_genomic_10kb
+grep -v -w -f <(cat Y.bed X.bed | cut -d "_" -f 1 | sort | uniq) /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_000687225.1_UrsMar_1.0_genomic_10kb.fasta.fai | awk '{print $1"\t1\t"$2}' > /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files_corrected/ref.Pbear1_autosomal_based_on_DogX_DogY.bed
+cd /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Human_XY_UrsMar_1.0_genomic_10kb
+grep -v -w -f <(cat Y.bed X.bed | cut -d "_" -f 1 | sort | uniq) /groups/hologenomics/andreaac/data/sex_identication/references_10kb/GCA_000687225.1_UrsMar_1.0_genomic_10kb.fasta.fai | awk '{print $1"\t1\t"$2}' > /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files_corrected/ref.Pbear1_autosomal_based_on_HumanX_HumanY.bed
+
+### HiC has already the right name so you can just take the fist column of the name
+
+cd /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Dog_XY_UrsMar_1.0_HiC_10kb
+grep -v -w -f <(cat Y.bed X.bed | cut -f 1 | sort | uniq) /groups/hologenomics/andreaac/data/sex_identication/references_10kb/UrsMar_1.0_HiC_10kb.fasta.fai | awk '{print $1"\t1\t"$2}' > /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files_corrected/ref.Pbear2HiC_autosomal_based_on_DogX_DogY.bed
+cd /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Human_XY_UrsMar_1.0_HiC_10kb
+grep -v -w -f <(cat Y.bed X.bed | cut -f 1 | sort | uniq) /groups/hologenomics/andreaac/data/sex_identication/references_10kb/UrsMar_1.0_HiC_10kb.fasta.fai | awk '{print $1"\t1\t"$2}' > /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files_corrected/ref.Pbear2HiC_autosomal_based_on_HumanX_HumanY.bed
