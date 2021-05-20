@@ -36,10 +36,12 @@ xsbatch -c 30 --mem-per-cpu=2G -J Cow_human --time 8-10:00:00 -- sh /groups/holo
 
 # Beluga ref_Beluga1
 ## Run in: 
+## I deleted the bam files downsampling by mistake. Need to run them again.
 cd /groups/hologenomics/andreaac/data/sex_identication/downsampling_bam/beluga/ref_Beluga1_10kb
 xsbatch -c 30 --mem-per-cpu=2G -J beluga1_cow --time 6-10:00:00 -- sh /groups/hologenomics/andreaac/data/sex_identication/depth_calculation/Coverage_script.sh /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files/ref.Beluga1_autosomal_based_on_CowX_HumanY.bed CowX_HumanY /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/X_trim_bed_files/ref.Beluga1_X_trim_based_on_CowX_HumanY.renamed.bed /groups/hologenomics/andreaac/data/sex_identication/depth_calculation/beluga/ref_Beluga1/Satsuma_CowX_HumanY
 
 ## Run in: 
+## I deleted the bam files downsampling by mistake. Need to run them again.
 cd /groups/hologenomics/andreaac/data/sex_identication/downsampling_bam/beluga/ref_Beluga1_10kb
 xsbatch -c 20 --mem-per-cpu=2G -J beluga1_human --time 6-10:00:00 -- sh /groups/hologenomics/andreaac/data/sex_identication/depth_calculation/Coverage_script.sh /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/Autosomes_bed_files/ref.Beluga1_autosomal_based_on_HumanX_HumanY.bed HumanX_HumanY /groups/hologenomics/andreaac/data/sex_identication/references_sex_scaffolds/X_trim_bed_files/ref.Beluga1_X_trim_based_on_HumanX_HumanY.renamed.bed /groups/hologenomics/andreaac/data/sex_identication/depth_calculation/beluga/ref_Beluga1/Satsuma_HumanX_HumanY
 
