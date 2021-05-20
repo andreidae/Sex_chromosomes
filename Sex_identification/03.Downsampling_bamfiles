@@ -1,0 +1,45 @@
+Downsampling bamfiles based on the number of reads
+
+Results in /groups/hologenomics/andreaac/data/sex_identication/downsampling_bam
+
+# To downsample bamfiles based on the number of reads you can use reformat from bbmap
+# In this script we are downsampling multiple files with different number of reads and doing it for 5 replicates
+# You need two files, one that calls the command bbMAP.sh for each individual sample and the bbMAP.sh file
+
+#load modules for bbmap
+
+module load java
+module load bbmap/v37.95
+
+cat commands_bbmap_dog.txt | xsbatch -R -c 1 --time 1-00:00:00 --mem-per-cpu 5000 --
+
+# Example of the file that contains each samples to be downsampled with the bbMAP script. Example for commands_bbmap_dog.txt
+./bbMAP_PB_DOG.sh PB_53
+./bbMAP_PB_DOG.sh PB_54
+./bbMAP_PB_DOG.sh PB_37
+./bbMAP_PB_DOG.sh PB_2
+./bbMAP_PB_DOG.sh PB_69
+./bbMAP_PB_DOG.sh PB_50
+./bbMAP_PB_DOG.sh PB_38
+./bbMAP_PB_DOG.sh PB_49
+./bbMAP_PB_DOG.sh PB_52
+./bbMAP_PB_DOG.sh PB_8
+
+#bbMAP script includes the loop for the downsampling and the number of replicates
+# src is the output directory, reformat.sh is the script from bbmap software and the other are the parameters for downsampling used in the name of the files
+
+# Example in bbMAP_PB_DOG.sh
+src=/groups/hologenomics/andreaac/data/sex_identication/mapping/polarbear/ref_DOG_10kb
+ref=DOG
+
+for i in 100000 50000 10000 5000 2500 1000; do for j in 1 2 3 4 5;
+
+do
+
+reformat.sh \
+	in=${src}/${1}.${ref}_10kb.bam \
+	out=${1}.${ref}_10kb_${i}_${j}.bam \
+	samplereadstarget=${i} \
+	sampleseed=1${j}0
+
+  done; done
